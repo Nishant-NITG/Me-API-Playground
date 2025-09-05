@@ -14,7 +14,7 @@ const Search = () => {
     setError(null)
 
     try {
-     const response = await fetch(`https://portfolio-website-backend-stpk.onrender.com/api/user/search?q=${encodeURIComponent(query)}`)
+     const response = await fetch(`https://me-api-playground-backend-4n1g.onrender.com/api/user/search?q=${encodeURIComponent(query)}`)
       if (!response.ok) {
         throw new Error('Search failed')
       }
