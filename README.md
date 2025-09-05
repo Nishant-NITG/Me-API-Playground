@@ -1,8 +1,8 @@
 Me-API Playground 🚀
-A personal API showcase built with the MERN stack that displays my profile, skills, and projects through a RESTful API and React frontend.
 
-🌐 Live Demo
-Frontend: https://me-api-playground-frontend.onrender.com
+A personal API showcase built with the MERN stack, designed to present my profile, skills, and projects through a RESTful API and a React frontend.
+
+🌐 Live Demo Frontend: https://me-api-playground-frontend.onrender.com
 
 Health Check: https://me-api-playground-backend-4n1g.onrender.com/health
 
@@ -11,21 +11,25 @@ GitHub Repository: https://github.com/Nishant-NITG/Me-API-Playground
 Resume: https://drive.google.com/file/d/1RdQp85k_nfEzPtAssksR0PdqV43LdKsl/view?usp=sharing
 
 🛠 Tech Stack
+
 Client: React, JavaScript, TailwindCSS, Vite
 Server: Node.js, Express.js, MongoDB, Mongoose, CORS
 Deployment: Render (Frontend & Backend), MongoDB Atlas
 
-📖 Project Description
-A personal API playground designed to showcase my developer profile, skills, and projects through a RESTful API interface. The platform serves as a dynamic portfolio that can be accessed programmatically, demonstrating backend API development skills and modern frontend implementation with a sleek glassmorphism UI design.
+📖 Project Overview
+
+Me-API Playground is a dynamic personal API platform to showcase my developer profile, skills, and projects. It demonstrates backend API development through a RESTful interface while providing a sleek frontend built with React, featuring a modern glassmorphism UI design.
 
 🏗 Architecture
-System Architecture
-text
+
+System Flow:
 Client (React Frontend) → API Gateway (Express.js) → MongoDB Database
-Frontend Architecture
+
+Frontend Architecture:
+
 Framework: React 18 with Vite
 
-Styling: Tailwind CSS with custom glassmorphism design
+Styling: Tailwind CSS with custom glassmorphism
 
 State Management: React Hooks
 
@@ -33,167 +37,149 @@ HTTP Client: Native Fetch API
 
 Build Tool: Vite
 
-Backend Architecture
+Backend Architecture:
+
 Runtime: Node.js
 
 Framework: Express.js
 
-Database: MongoDB with Mongoose ODM
+Database: MongoDB via Mongoose
 
 CORS: Configured for cross-origin requests
 
-Environment: dotenv for configuration management
+Environment Config: dotenv
 
 🚀 Setup Instructions
 Local Development
-Prerequisites
+
+Prerequisites:
+
 Node.js 16+
 
 MongoDB Atlas account or local MongoDB
 
 Git
 
-Backend Setup
-bash
-# Clone repository
+Backend Setup:
+
 git clone https://github.com/Nishant-NITG/Me-API-Playground.git
 cd Me-API-Playground/backend
-
-# Install dependencies
 npm install
-
-# Environment setup
 cp .env.example .env
-# Edit .env with your MongoDB URI:
-# DB_CONNECT_STRING=your_mongodb_connection_string
-# PORT=5000
-
-# Start development server
+# Update .env with your MongoDB URI
+DB_CONNECT_STRING=your_mongodb_connection_string
+PORT=5000
 npm run dev
-Frontend Setup
-bash
+
+
+Frontend Setup:
+
 cd ../frontend
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-Production Deployment
-Backend Deployment (Render)
-Connect GitHub repository to Render
 
-Set root directory to backend
+Production Deployment
+
+Backend (Render):
+
+Connect GitHub repo to Render
+
+Root directory: backend
 
 Add environment variables:
 
-DB_CONNECT_STRING: Your MongoDB Atlas connection string
+DB_CONNECT_STRING = MongoDB connection string
 
-PORT: 5000
+PORT = 5000
 
-NODE_ENV: production
+NODE_ENV = production
 
-Frontend Deployment (Render)
-Create static site on Render
+Frontend (Render):
 
-Set root directory to frontend
+Create a static site
+
+Root directory: frontend
 
 Build command: npm run build
 
 Publish directory: dist
 
-Environment variable: VITE_API_URL: your-backend-url.onrender.com
+Environment variable: VITE_API_URL = your-backend-url.onrender.com
 
 🗄 Database Schema
-User Collection Schema
-javascript
+
+User Collection:
+
 {
   _id: ObjectId,
   name: String,
   email: String,
-  education: [{
-    institution: String,
-    degree: String,
-    year: String
-  }],
+  education: [{ institution: String, degree: String, year: String }],
   skills: [String],
-  projects: [{
-    title: String,
-    description: String,
-    links: [String],
-    skills: [String]
-  }],
-  work: [{
-    company: String,
-    position: String,
-    duration: String,
-    description: String
-  }],
-  links: {
-    github: String,
-    linkedin: String,
-    portfolio: String
-  },
+  projects: [{ title: String, description: String, links: [String], skills: [String] }],
+  work: [{ company: String, position: String, duration: String, description: String }],
+  links: { github: String, linkedin: String, portfolio: String },
   createdAt: Date,
   updatedAt: Date
 }
-Indexes
-email: Unique index for user identification
+
+
+Indexes:
+
+email → Unique index for user identification
 
 📡 API Endpoints
+
 Base URL: https://me-api-playground-backend-4n1g.onrender.com/api
+
 Method	Endpoint	Description	Parameters
-GET	/user	Get complete user profile	None
-PUT	/user	Create or update user profile	User data in body
-GET	/user/projects	Get projects filtered by skill	skill (query parameter)
-GET	/user/skills/top	Get top skills by usage	None
+GET	/user	Retrieve full user profile	None
+PUT	/user	Create or update user profile	User data in request body
+GET	/user/projects	Fetch projects filtered by skill	skill (query parameter)
+GET	/user/skills/top	Get top skills	None
 GET	/user/search	Search across all user data	q (query parameter)
-cURL Examples
-Health Check:
 
-bash
+cURL Examples:
+
+# Health Check
 curl https://me-api-playground-backend-4n1g.onrender.com/health
-Get User Profile:
 
-bash
+# Get User Profile
 curl https://me-api-playground-backend-4n1g.onrender.com/api/user
-Get Projects by Skill:
 
-bash
+# Get Projects by Skill
 curl "https://me-api-playground-backend-4n1g.onrender.com/api/user/projects?skill=javascript"
-Search Across Data:
 
-bash
+# Search Across Data
 curl "https://me-api-playground-backend-4n1g.onrender.com/api/user/search?q=react"
-Get Top Skills:
 
-bash
+# Get Top Skills
 curl https://me-api-playground-backend-4n1g.onrender.com/api/user/skills/top
 
 ⚠ Known Limitations
-Authentication: No authentication mechanism for write operations
 
-Rate Limiting: No rate limiting implemented
+No authentication for write operations
 
-Pagination: Large datasets are not paginated
+No rate limiting
 
-Data Validation: Limited input validation on API endpoints
+Large datasets not paginated
 
-Error Handling: Basic error handling without comprehensive logging
+Limited input validation
 
-Testing: Limited test coverage
+Basic error handling without full logging
 
-Caching: No response caching implemented
+Minimal test coverage
 
-Image Uploads: No support for profile image uploads
+No caching implemented
 
-📞 Contact 
-Nishant Sharma
-📧 nishshar23@gmail.com
+Profile image uploads not supported
+
+📞 Contact Nishant Sharma
+
+📧 Email: nishshar23@gmail.com
+
 🔗 LinkedIn Profile
+
 🐙 GitHub Profile
 
-
-📄 License
-MIT License - see LICENSE file for details.
-
+📄 License: MIT License - see LICENSE file
