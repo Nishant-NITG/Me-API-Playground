@@ -7,7 +7,7 @@ app.use(express.json())
 const userRoutes = require("./routes/userRoutes")
 
 app.use(cors({
-  origin: "https://me-api-playground-frontend.onrender.com",  
+  origin: "https://me-api-playground-backend-4n1g.onrender.com",  
   credentials: true                 
 }));
 
