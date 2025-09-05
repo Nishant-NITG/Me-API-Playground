@@ -17,7 +17,7 @@ function App() {
   const fetchProfileData = async () => {
     try {
       setLoading(true)
-      const response = await fetch('https://portfolio-website-backend-stpk.onrender.com/api/user')
+      const response = await fetch('https://me-api-playground-backend-4n1g.onrender.com/api/user')
       if (!response.ok) {
         throw new Error('Failed to fetch profile data')
       }
