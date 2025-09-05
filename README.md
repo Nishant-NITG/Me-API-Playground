@@ -4,8 +4,6 @@ A personal API showcase built with the MERN stack that displays my profile, skil
 🌐 Live Demo
 Frontend: https://me-api-playground-frontend.onrender.com
 
-Backend API: https://me-api-playground-backend-4n1g.onrender.com
-
 Health Check: https://me-api-playground-backend-4n1g.onrender.com/health
 
 GitHub Repository: https://github.com/Nishant-NITG/Me-API-Playground
